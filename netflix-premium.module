@@ -7,6 +7,6 @@ hostname = %APPEND% netflix.com, api.netflix.com, customerevents.netflix.com, ad
 
 [Script]
 # Kịch bản xử lý yêu cầu HTTP
-netflix-json = type=http-request,pattern=^https:\/\/(api\.netflix\.com\/api\/v3\/account|ads\.netflix\.com\/.*),requires-body=0,script-path=https://raw.githubusercontent.com/your-username/netflix-module/main/scripts/my-netflix-json.js
+netflix-json = type=http-request,pattern=^https:\/\/(api\.netflix\.com\/api\/v3\/account|ads\.netflix\.com\/.*),requires-body=0,script-path=https://raw.githubusercontent.com/toneFe/netflix-premium.module/refs/heads/main/Script/my-netflix-json.js
 # Kịch bản xử lý phản hồi HTTP
-netflix-proto = type=http-response,pattern=^https:\/\/(api\.netflix\.com\/api\/v3\/account|customerevents\.netflix\.com\/.*),requires-body=1,binary-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/your-username/netflix-module/main/scripts/my-netflix-proto.js
+netflix-proto = type=http-response,pattern=^https:\/\/(api\.netflix\.com\/api\/v3\/account|customerevents\.netflix\.com\/.*),requires-body=1,binary-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/toneFe/netflix-premium.module/refs/heads/main/Script/my-netflix-proto.js
