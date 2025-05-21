@@ -1,0 +1,12 @@
+#!name=Netflix Premium (iOS)
+#!desc=Mô-đun để mở khóa một số tính năng Netflix Premium, như bỏ quảng cáo, xem 4K, hoặc vượt giới hạn địa lý.
+# Lưu ý: Đăng xuất và đăng nhập lại Netflix sau khi kích hoạt.
+
+[MITM]
+hostname = %APPEND% netflix.com, api.netflix.com, customerevents.netflix.com, ads.netflix.com, ichnaea.netflix.com
+
+[Script]
+# Kịch bản xử lý yêu cầu HTTP
+netflix-json = type=http-request,pattern=^https:\/\/(api\.netflix\.com\/api\/v3\/account|ads\.netflix\.com\/.*),requires-body=0,script-path=https://raw.githubusercontent.com/your-username/netflix-module/main/scripts/my-netflix-json.js
+# Kịch bản xử lý phản hồi HTTP
+netflix-proto = type=http-response,pattern=^https:\/\/(api\.netflix\.com\/api\/v3\/account|customerevents\.netflix\.com\/.*),requires-body=1,binary-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/your-username/netflix-module/main/scripts/my-netflix-proto.js
